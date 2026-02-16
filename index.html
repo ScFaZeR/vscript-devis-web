@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSCRIPT — Création de Sites Internet</title>
+    <meta name="description"
+        content="VSCRIPT — Création de sites internet sur-mesure. Configurez votre projet et obtenez un devis instantané.">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                <img src="assets/logo.png" alt="VSCRIPT Logo">
+            </a>
+            <ul class="navbar-links">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Accueil</a></li>
+                <li><a href="#realisations" class="nav-link" data-section="realisations">Nos réalisations</a></li>
+                <li><a href="#configurateur" class="nav-link" data-section="configurateur">Devis</a></li>
+                <li><a href="#rejoindre" class="nav-link" data-section="rejoindre">Nous rejoindre</a></li>
+            </ul>
+            <a href="#configurateur" class="navbar-cta">
+                <i class="fas fa-rocket"></i> Obtenir un devis
+            </a>
+            <button class="navbar-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+
+            <img src="assets/logo.png" alt="VSCRIPT" class="hero-logo">
+            <h1 class="hero-title">
+                Votre site internet
+                <span class="gradient-text">sur-mesure</span>
+            </h1>
+            <p class="hero-subtitle">
+                Configurez votre projet web en quelques clics et obtenez un devis personnalisé instantanément. Design
+                premium, développement professionnel.
+            </p>
+            <div class="hero-actions">
+                <a href="#configurateur" class="btn btn-primary btn-glow">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    Configurer mon site
+                </a>
+                <a href="#realisations" class="btn btn-outline">
+                    <i class="fas fa-eye"></i>
+                    Nos réalisations
+                </a>
+            </div>
+
+        </div>
+        <div class="hero-scroll">
+            <a href="#realisations">
+                <div class="scroll-indicator">
+                    <div class="scroll-dot"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== NOS REALISATIONS ===== -->
+    <section class="realisations" id="realisations">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Portfolio</span>
+                <h2 class="section-title">Nos <span class="gradient-text">réalisations</span></h2>
+                <p class="section-subtitle">Découvrez les sites que nous avons déjà créés pour nos clients</p>
+            </div>
+            <div class="realisations-grid">
+                <!-- Projet 1 — VPictures -->
+                <a href="https://pianzer.github.io/vpictures/" target="_blank" class="realisation-card">
+                    <div class="realisation-img">
+                        <img src="screen/vpicture.png.png" alt="VPictures"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                        <div class="realisation-overlay">
+                            <span class="realisation-visit"><i class="fas fa-external-link-alt"></i> Voir le site</span>
+                        </div>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>VPictures</h3>
+                        <p>Site de services en ligne</p>
+                        <span class="realisation-link">pianzer.github.io/vpictures <i
+                                class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Projet 2 — Recrutement Support -->
+                <a href="https://scfazer.github.io/recrutement.support/" target="_blank" class="realisation-card">
+                    <div class="realisation-img">
+                        <img src="screen/recrutement_support.png.png" alt="Recrutement Support"
+                            onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
+                        <div class="realisation-overlay">
+                            <span class="realisation-visit"><i class="fas fa-external-link-alt"></i> Voir le site</span>
+                        </div>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>Recrutement Support</h3>
+                        <p>Formulaire de recrutement en ligne</p>
+                        <span class="realisation-link">scfazer.github.io/recrutement.support <i
+                                class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Placeholder pour futurs projets -->
+                <div class="realisation-card realisation-placeholder">
+                    <div class="realisation-img no-img">
+                        <div class="realisation-overlay placeholder-overlay">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="realisation-info">
+                        <h3>Votre projet ?</h3>
+                        <p>Demandez votre devis dès maintenant</p>
+                        <a href="#configurateur" class="realisation-link">Créer mon devis <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEVIS SECTION ===== -->
+    <section class="configurateur" id="configurateur">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge">Devis</span>
+                <h2 class="section-title">Configurez votre <span class="gradient-text">site</span></h2>
+                <p class="section-subtitle">Sélectionnez vos options et téléchargez votre devis en PDF</p>
+            </div>
+
+            <div class="devis-wrapper">
+                <!-- Devis List -->
+                <div class="devis-list">
+
+                    <!-- Base obligatoire -->
+                    <div class="devis-line devis-line-locked">
+                        <div class="devis-line-left">
+                            <div class="devis-checkbox locked">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="devis-line-info">
+                                <h4>Création du site internet</h4>
+                                <p>Prix de base — Conception, développement & mise en ligne</p>
+                            </div>
+                        </div>
+                        <div class="devis-line-price">45€</div>
+                    </div>
+
+                    <!-- Option 1 -->
+                    <div class="devis-line-group">
+                        <div class="devis-line" id="opt1">
+                            <div class="devis-line-left">
+                                <div class="devis-checkbox">
+                                    <input type="checkbox" name="option" value="video" data-price="5" id="optVideo"
+                                        data-label="Intégration vidéo YouTube">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </div>
+                                <div class="devis-line-info">
+                                    <h4>Intégration vidéo YouTube</h4>
+                                    <p>Ajout de vidéos YouTube intégrées sur votre site</p>
+                                </div>
+                            </div>
+                            <div class="devis-line-price">5€</div>
+                        </div>
+                        <div class="devis-line-extra" id="videoCountExtra" style="display:none;">
+                            <div class="devis-input-group">
+                                <label for="videoCount"><i class="fab fa-youtube"></i> Nombre de vidéos</label>
+                                <select id="videoCountSelect" class="devis-select">
+                                    <option value="1-3">1-3 vidéos (Inclus)</option>
+                                    <option value="4-7">4-7 vidéos (+10€)</option>
+                                    <option value="8+">8+ vidéos (+15€)</option>
+                                </select>
+                                <span class="devis-input-hint"><i class="fas fa-info-circle"></i> Le prix s'ajuste selon
+                                    le nombre de vidéos choisies.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option 2 — Discord -->
+                    <div class="devis-line-group">
+                        <div class="devis-line" id="opt2">
+                            <div class="devis-line-left">
+                                <div class="devis-checkbox">
+                                    <input type="checkbox" name="option" value="discord" data-price="5" id="optDiscord"
+                                        data-label="Redirection serveur Discord">
+                                    <span class="checkmark"><i class="fas fa-check"></i></span>
+                                </div>
+                                <div class="devis-line-info">
+                                    <h4>Redirection vers le serveur Discord</h4>
+                                    <p>Bouton de redirection vers votre serveur Discord</p>
+                                </div>
+                            </div>
+                            <div class="devis-line-price">5€</div>
+                        </div>
+                        <div class="devis-line-extra" id="discordLinkExtra" style="display:none;">
+                            <div class="devis-input-group">
+                                <label for="discordLink"><i class="fab fa-discord"></i> Lien d'invitation
+                                    Discord</label>
+                                <input type="url" id="discordLinkInput" placeholder="https://discord.gg/votre-lien">
+                                <span class="devis-input-hint"><i class="fas fa-info-circle"></i> Pensez à créer un lien
+                                    d'invitation à durée indéterminée (« Jamais » dans les paramètres
+                                    d'expiration)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option 3 — Formulaire webhook -->
+                    <div class="devis-line" id="opt3">
+                        <div class="devis-line-left">
+                            <div class="devis-checkbox">
+                                <input type="checkbox" name="option" value="webhook" data-price="15"
+                                    data-label="Formulaire webhook Discord">
+                                <span class="checkmark"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="devis-line-info">
+                                <h4>Formulaire avec intégration Webhook Discord</h4>
+                                <p>Création d'un formulaire connecté à Discord</p>
+                                <span class="devis-line-note"><i class="fas fa-circle-info"></i> Cela rajoute une
+                                    intégration où vous recevrez les messages dans un channel Discord (exemple : dépôt
+                                    de dossier, signalement d'un joueur, etc.)</span>
+                            </div>
+                        </div>
+                        <div class="devis-line-price">15€</div>
+                    </div>
+
+                    <!-- Option 4 -->
+                    <div class="devis-line" id="opt4">
+                        <div class="devis-line-left">
+                            <div class="devis-checkbox">
+                                <input type="checkbox" name="option" value="reglement" data-price="10"
+                                    data-label="Intégration du règlement">
+                                <span class="checkmark"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="devis-line-info">
+                                <h4>Intégration du règlement</h4>
+                                <p>Page dédiée au règlement de votre serveur</p>
+                            </div>
+                        </div>
+                        <div class="devis-line-price">10€</div>
+                    </div>
+
+                    <!-- Option 5 -->
+                    <div class="devis-line" id="opt5">
+                        <div class="devis-line-left">
+                            <div class="devis-checkbox">
+                                <input type="checkbox" name="option" value="toggle-page" data-price="10"
+                                    data-label="Activation / Désactivation de pages">
+                                <span class="checkmark"><i class="fas fa-check"></i></span>
+                            </div>
+                            <div class="devis-line-info">
+                                <h4>Activation / Désactivation de pages</h4>
+                                <p>Fonction permettant d'activer ou désactiver une page du site</p>
+                            </div>
+                        </div>
+                        <div class="devis-line-price">10€</div>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar Total -->
+                <div class="devis-sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <img src="assets/logo.png" alt="VSCRIPT" class="sidebar-logo">
+                            <h3>Récapitulatif</h3>
+                        </div>
+                        <div class="sidebar-items" id="sidebarItems">
+                            <div class="sidebar-item">
+                                <span class="sidebar-item-name"><i class="fas fa-lock"></i> Création du site</span>
+                                <span class="sidebar-item-price">45€</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-total">
+                            <div class="sidebar-total-label">Total</div>
+                            <div class="sidebar-total-price" id="sidebarPrice">45€</div>
+                        </div>
+                        <div class="sidebar-action">
+                            <button class="btn btn-primary btn-glow btn-download" id="downloadDevis">
+                                <i class="fas fa-file-pdf"></i>
+                                Télécharger le devis PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOUS REJOINDRE (Discord) ===== -->
+    <section class="rejoindre" id="rejoindre">
+        <div class="section-container">
+            <div class="rejoindre-card">
+                <div class="rejoindre-left">
+                    <div class="rejoindre-icon-wrap">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h2>Rejoignez-nous sur <span class="gradient-text">Discord</span></h2>
+                    <p>Discutez avec notre équipe, posez vos questions, suivez l'avancement de votre projet et rejoignez
+                        la communauté VSCRIPT.</p>
+                    <ul class="rejoindre-perks">
+                        <li><i class="fas fa-check-circle"></i> Support en temps réel</li>
+                        <li><i class="fas fa-check-circle"></i> Ouverture de ticket possible</li>
+                        <li><i class="fas fa-check-circle"></i> Communauté active</li>
+                        <li><i class="fas fa-check-circle"></i> Offres exclusives</li>
+                        <li><i class="fas fa-check-circle"></i> Réponse sous 24h</li>
+                    </ul>
+                    <a href="https://discord.gg/hSdGN2JutU" target="_blank" class="btn btn-discord btn-glow">
+                        <i class="fab fa-discord"></i>
+                        Rejoindre le serveur Discord
+                    </a>
+                </div>
+                <div class="rejoindre-right">
+                    <div class="discord-preview">
+                        <div class="discord-header">
+                            <div class="discord-dot red"></div>
+                            <div class="discord-dot yellow"></div>
+                            <div class="discord-dot green"></div>
+                            <span>VSCRIPT — Discord</span>
+                        </div>
+                        <div class="discord-body">
+                            <div class="discord-channel active"><i class="fas fa-hashtag"></i> général</div>
+                            <div class="discord-channel"><i class="fas fa-hashtag"></i> commandes</div>
+                            <div class="discord-channel"><i class="fas fa-hashtag"></i> support</div>
+                            <div class="discord-channel"><i class="fas fa-hashtag"></i> showcase</div>
+                            <div class="discord-channel"><i class="fas fa-volume-high"></i> Salon vocal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="VSCRIPT" class="footer-logo">
+                <p>Solutions web professionnelles sur-mesure</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Accueil</a>
+                <a href="#realisations">Réalisations</a>
+                <a href="#configurateur">Devis</a>
+                <a href="https://discord.gg/hSdGN2JutU" target="_blank">Discord</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VSCRIPT — Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SUCCESS MODAL ===== -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Demande envoyée !</h3>
+            <p>Merci pour votre demande de devis. Nous reviendrons vers vous dans les <strong>24 heures</strong>.</p>
+            <button class="btn btn-primary" onclick="closeModal()">Parfait !</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
